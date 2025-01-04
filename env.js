@@ -1,2 +1,6 @@
-export const LOGIN_API = "http://localhost:3000/api/login";
-export const SIGN_UP_API = "http://localhost:3000/api/signup"
+const BASE_URI = "https://blog-app-c99e.onrender.com";
+
+export const LOGIN_API = `${BASE_URI}/api/login`;
+export const SIGN_UP_API = `${BASE_URI}/api/signup`;
+export const ADD_BLOG_API = `${BASE_URI}/api/add`;
+export const GET_BLOG_API = `${BASE_URI}/api/blogs`;

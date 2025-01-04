@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { logout } from "../actions/authActions";
+import { BLOGS_API } from "../../env";
 function AllBlogs() {
   const dispatch = useDispatch();
   const [blogs, setBlogs] = useState([]); // For storing fetched blogs
@@ -13,7 +14,7 @@ function AllBlogs() {
       const token = localStorage.getItem("auth")
       try {
         setLoading(true); // Start loading
-        const response = await axios.get('http://localhost:3000/api/blogs',{ headers:{
+        const response = await axios.get(BLOGS_API,{ headers:{
             'Authorization': token,
             'Content-Type': 'application/json', // Optional, depending on your API requirements
           }});
