@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cards:last-child {
+    margin-left: 0;
+    margin-right: auto; /* Push the card to the left if it's alone */
+}
