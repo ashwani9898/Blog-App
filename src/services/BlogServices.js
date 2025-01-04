@@ -6,7 +6,7 @@ export async function PostBlog(blogData){
   
   const token = localStorage.getItem('auth')
   try{
-    const response = await axios.post(API_URl, blogData,{
+    const response = await axios.post(ADD_BLOG_API, blogData,{
         headers:{
             'Authorization':token,
             'Content-Type': 'application/json',
