@@ -1,9 +1,9 @@
 const Blog = require('../models/Blog');
 
 async function GetAllBlogs(req,res){
-    const user = req.user;
+
     
-    const blogs = await Blog.find({author:user});
+    const blogs = await Blog.find();
     
     res.status(200).json(blogs)
 
