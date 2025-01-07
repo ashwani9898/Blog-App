@@ -2,19 +2,22 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import {login,logout} from "../actions/authActions"
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 const LoginForm = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log("Form Data:", data);
-    dispatch(login(data))
+    await dispatch(login(data))
+    navigate('/dashboard/myblogs')
+    console.log('ok')
     
   };
 

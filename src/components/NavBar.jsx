@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import LoginForm from "../forms/LoginForm";
 import { logout } from "../actions/authActions";
+import { Link } from "react-router-dom";
 
 function NavBar({handleFormVisibility,isFormVisible}){
 
@@ -42,7 +43,8 @@ function handleLogout(e){
     <span className='text-3xl'>Blogs</span>
       <div className='flex gap-5'>
       {isUserLoggedIn && !isFormVisible && <a href='#' onClick={handleFormVisibility} className=' bg-white text-black py-1 px-4 rounded-md'>Add Blog</a>}
-       {isUserLoggedIn && !isFormVisible && <button onClick={handleLogout} className=' bg-white text-black py-1 px-4 rounded-md'>Logout</button>}</div>
+       {isUserLoggedIn && !isFormVisible && <button onClick={handleLogout} className=' bg-white text-black py-1 px-4 rounded-md'>Logout</button>}
+       {!isUserLoggedIn   && <Link  to = {'/login'}><button  className=' bg-white text-black py-1 px-4 rounded-md'>Login</button></Link>}</div>
     </div>
     </>)
 }
